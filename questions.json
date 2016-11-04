@@ -1,0 +1,89 @@
+{
+  "__thoughts": "bot lines 1,2,3... and replies allowed.",
+  "__multiple_nextBots__": "mean that they will run one after the other",
+  "bot": {
+    "_start_": {
+      "id": "_start_",
+      "__desc__": "Part1: First greeting!",
+      "str": "Hi! My name is Anuj.",
+      "replies":["greeting", "how_are_you", "my_name_is"]
+    },
+    "what_is_your_name": {
+      "id": "what_is_your_name",
+      "str": "What is your name?",
+      "replies": ["my_name_is"]
+    },
+    "how_are_you": {
+      "id": "how_are_you",
+      "str": "How are you today?",
+      "replies": ["i_am_good", "i_am_not_good"]
+    },
+    "i_am_good": {
+      "id": "i_am_good",
+      "str": "I am good, thank you! And you?",
+      "replies": ["i_am_good", "i_am_not_good"]
+    },
+
+    "that_is_great": {
+      "id": "that_is_great",
+      "str": "That is great!",
+      "replies": []
+    },
+    "i_am_sorry": {
+      "id": "i_am_sorry",
+      "str": "I am sorry about that.",
+      "replies": []
+    },
+
+    "my_friend": {
+      "id": "my_friend",
+      "__desc__": "Part2: Meet my friends!",
+      "str": "Look! Here are my friends Sonu, Monu and Golu. Say hi to everyone.",
+      "replies":["hi_everyone"]
+    },
+
+    "_end_": {
+      "id": "_end_",
+      "str": "It was nice talking to you. Bye!"
+    }
+  },
+
+  "replies": {
+    "greeting": {
+      "id": "greeting",
+      "__desc__": "Basic greetings.",
+      "nextQ": ["what_is_your_name"],
+      "list": ["Hi!", "Hello!", "Hi Anuj", "Hello Anuj"]
+    },
+    "how_are_you": {
+      "id": "how_are_you",
+      "__desc__": "how are you type",
+      "nextQ": ["i_am_good"],
+      "list": ["How are you?", "Hi! How are you?"]
+    },
+    "my_name_is": {
+      "id": "my_name_is",
+      "__desc__": "tell your name",
+      "nextQ": ["how_are_you"],
+      "list": ["Hi! my name is "]
+    },
+    "i_am_good": {
+      "id": "i_am_good",
+      "__desc__": "I am good!",
+      "nextQ": ["that_is_great", "my_friend"],
+      "list": ["I am good, thank you!", "I am excellent", "Well, thank you", "I am well"]
+    },
+    "i_am_not_good": {
+      "id": "i_am_not_good",
+      "__desc__": "I am not good!",
+      "nextQ": ["i_am_sorry", "my_friend"],
+      "list": ["I am not well..", "Not good.", "Really bad"]
+    },
+    "hi_everyone": {
+      "id": "hi_everyone",
+      "nextQ": ["_end_"],
+      "list": ["Hi everyone!"]
+    }
+
+  }
+}
